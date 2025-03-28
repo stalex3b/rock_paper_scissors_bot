@@ -1,4 +1,4 @@
-from aiogram import Router
+from aiogram import Router, F
 from aiogram.types import Message
 from aiogram.filters import Command, CommandStart
 from keyboards.keyboards import game_kb, yes_no_kb
@@ -14,7 +14,7 @@ async def process_start_command(message: Message):
     await message.answer(text=LEXICON_RU['/start'], reply_markup=yes_no_kb)
 
 
-@router.message(Command(commands='/help'))
+@router.message(Command(commands='help'))
 async def process_help_command(message: Message):
     await message.answer(text=LEXICON_RU['/help'], reply_markup=yes_no_kb)
 
